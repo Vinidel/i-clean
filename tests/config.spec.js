@@ -11,7 +11,7 @@ describe("Configuration setup", function() {
     });
     it("should load production configurations", function(next) {
         var config = require('../config')('production');
-        expect(config.mode).toBe('production');
+        expect(config.mode).toBe('hello');
         next();
     });
 });
