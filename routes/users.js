@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/permission', function(req, res, next) {
+router.get('/permissions', function(req, res, next) {
     res.send('respond with permissions');
 });
 
