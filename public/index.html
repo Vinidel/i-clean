@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/freelancer.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
   </head>
   <body id="page-top" class="index">
     <!-- Navigation -->
@@ -29,7 +30,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Coming soon</a>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Register</a>
                     </li>
                 </ul>
             </div>
@@ -37,6 +41,24 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
+    <!-- Login modal-->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+                <form>
+                    <input type="text" name="user" placeholder="Username">
+                    <input type="password" name="pass" placeholder="Password">
+                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                </form>
+
+                <div class="login-help">
+                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Header -->
     <header>
