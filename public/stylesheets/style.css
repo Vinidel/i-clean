@@ -5,3 +5,15 @@ body {
 a {
   color: #00B7FF;
 }
+
+.custom-nav{
+    background-color: #222222 !important;
+}
+
+.custom-font-color{
+    color: #fff !important;
+}
+
+.custom-title{
+    color: #81a2c5;
+}
