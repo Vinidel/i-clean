@@ -1,13 +1,10 @@
-var express = require('express');
-var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 
-router.get('/permissions', function(req, res, next) {
-    res.send('respond with permissions');
-});
+module.exports = function(app){
+    var userController = app.controllers.user;
+    /* GET users listing. */
+    app.get('/users', userController.users);
 
-module.exports = router;
+    /* GET users permissions listing. */
+    app.get('/users/permissions', userController.permissions);
+};

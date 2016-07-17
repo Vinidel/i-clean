@@ -1,14 +1,17 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express         = require('express');
+var path            = require('path');
+var favicon         = require('serve-favicon');
+var logger          = require('morgan');
+var cookieParser    = require('cookie-parser');
+var bodyParser      = require('body-parser');
+var consign         = require('consign');
+var load            = require('express-load');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
 
-var app = express();
+//var routes          = require('./routes/index');
+//var users           = require('./routes/users');
+
+var app             = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,8 +25,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+consign()
+    .include('models')
+    .then('controllers')
+    .then('routes')
+    .into(app);
+
+//app.use('/', routes);
+//app.use('/users', users);
+
+//carregando middlewares
+//load('models')
+//    .then('controllers')
+//    .then('routes')
+//    .into(app);
 
 
 

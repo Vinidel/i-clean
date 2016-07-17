@@ -1,14 +1,8 @@
-var express = require('express');
-var router = express.Router();
 
-/* GET home page. */
-
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-
-router.get('/dashboard', function(req, res, next) {
-    res.render('main/index');
-});
-
-module.exports = router;
+module.exports = function(app){
+    var indexController = app.controllers.index;
+    /* GET home page. */
+    app.get('/', indexController.index);
+    /* GET login. */
+    app.get('/login', indexController.login);
+}
