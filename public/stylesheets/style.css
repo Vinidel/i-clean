@@ -17,3 +17,7 @@ a {
 .custom-title{
     color: #81a2c5;
 }
+
+.form-control.schedinput{
+    height: 44px;
+}
