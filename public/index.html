@@ -10,158 +10,12 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
   </head>
-  <body id="page-top" class="index">
+
+  <body id="page-top" class="index" ng-app="LandingPageModule">
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top custom-nav">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand custom-font-color'" href="#page-top">Schedule your week</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden active">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#" data-toggle="modal" data-target="#register-modal">Register</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <div ui-view="landingPage"></div>
 
-    <!-- Login modal-->
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="loginmodal-container">
-                <h1>Login to Your Account</h1><br>
-                <form action="/login">
-                    <input type="text" name="user" placeholder="Username">
-                    <input type="password" name="pass" placeholder="Password">
-                    <input type="submit" name="login" class="login loginmodal-submit" value="Submit">
-                </form>
-
-                <div class="login-help">
-                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register modal-->
-    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="registermodal-container">
-                <h1 class="center">Register</h1><br>
-                <form name="register-form" id="register-form" action="/register">
-
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input class="form-control schedinput">
-                        </div>
-                        <div class="form-group">
-                            <label>Real name</label>
-                            <input class="form-control schedinput">
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input class="form-control schedinput">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control schedinput">
-                        </div>
-                        <div class="form-group">
-                             <button type="button" class="btn btn-lg btn-success  pull-right">Create an account</button>
-                        </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
-                    <div class="intro-text">
-                        <span class="name custom-title">under construction</span>
-                        <span class="skills"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Footer -->
-    <footer class="text-center custom-nav">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>24 Innesdale Rd<br>Wolli Creek, 2205</p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Options</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About us</h3>
-                        <p>Comming soon by<a href="#"> #PaleBlue</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright © PaleBlue 2016 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll hidden-lg hidden-md hidden-sm hidden-xs" style="display: block;">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
 
   </body>
   <script src="/js/jquery.js"></script>
@@ -172,6 +26,8 @@
   <script src="/js/freelancer.js"></script>
   <script src="/js/jqBootstrapValidation.js"></script>
   <script src="/js/angular/angular.min.js"></script>
+  <script src="/js/angular/angular-ui-router.min.js"></script>
+  <script src="/js/angular/ui-bootstrap.js"></script>
   <script src="/js/index.js"></script>
   </body>
 </html>
