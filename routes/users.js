@@ -7,4 +7,7 @@ module.exports = function(app){
 
     /* GET users permissions listing. */
     app.get('/users/permissions', userController.permissions);
+
+    /* POST users login to verification. */
+    app.post('/login', userController.login);
 };

@@ -1,25 +1,15 @@
 /**
  * Created by vinidev on 17/07/16.
  */
-var Login = function (data) {
-    this.data = data;
-}
+'use strict';
 
-Login.prototype.data = {}
-
-Login.prototype.changePassword = changePassWord;
+var mongoose = require('mongoose');
 
 
-function changePassWord(pass) {
-    this.data.password = pass;
-}
+var loginSchema = new mongoose.Schema({
+    userName: String,
+    password: String
+    //active  : Boolean
+});
 
-
-Login.findById = function (id, callback) {
-    db.get('logins', {id: id}).run(function (err, data) {
-        if (err) return callback(err);
-        callback(null, new Login(data));
-    });
-}
-
-module.exports = Login;
+mongoose.model('Thing', loginSchema);

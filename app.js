@@ -6,6 +6,8 @@ var cookieParser    = require('cookie-parser');
 var bodyParser      = require('body-parser');
 var consign         = require('consign');
 var load            = require('express-load');
+var mongoose        = require('mongoose');
+var mongoConf       = require('./config/mongo');
 
 
 //var routes          = require('./routes/index');
@@ -31,16 +33,12 @@ consign()
     .then('routes')
     .into(app);
 
-//app.use('/', routes);
-//app.use('/users', users);
-
-//carregando middlewares
-//load('models')
-//    .then('controllers')
-//    .then('routes')
-//    .into(app);
-
-
+//Connecting to mongoDB
+mongoose.connect(mongoConf.mongo.uri);
+mongoose.connection.on('error', function(err) {
+    console.error('MongoDB connection error: ' + err);
+    process.exit(-1);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
