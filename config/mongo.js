@@ -9,7 +9,7 @@ module.exports = {
 
     // MongoDB connection options
     mongo: {
-        uri: 'mongodb://localhost/oloko'
+        uri: 'mongodb://localhost/schedyou-dev'
     },
 
     // Seed database on startup

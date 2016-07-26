@@ -7,9 +7,9 @@ var mongoose = require('mongoose');
 
 
 var loginSchema = new mongoose.Schema({
-    userName: String,
+    email: String,
     password: String
     //active  : Boolean
 });
 
-mongoose.model('Thing', loginSchema);
+mongoose.model('logins', loginSchema);
