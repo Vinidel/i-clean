@@ -21,3 +21,9 @@ a {
 .form-control.schedinput{
     height: 44px;
 }
+
+.btn.btn-sched {
+    color: #fff;
+    background-color: #435a71;
+    border-color: #435a71;
+}

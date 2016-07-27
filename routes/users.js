@@ -10,4 +10,7 @@ module.exports = function(app){
 
     /* POST users login to verification. */
     app.post('/login', userController.login);
+
+    /* POST to register a new user. */
+    app.post('/register', userController.register);
 };
