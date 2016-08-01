@@ -42,18 +42,20 @@ function register(req, res, next){
     var email    = req.body.email;
     var pass     = req.body.password;*/
 
-    var user = new User({
-     username : req.body.username,
-     name     : req.body.name,
-     active   : req.body.active,
-     email    : req.body.email,
-     password : req.body.password
-    });
-
-    user.save(function(err, user){
-        if(err)res.status(500).send('an error ocurred');
-        res.status(200).send(user);
-    });
+    //var user = new User({
+    // username : req.body.username,
+    // name     : req.body.name,
+    // active   : req.body.active,
+    // email    : req.body.email,
+    // password : req.body.password
+    //});
+    //
+    //var user = new User(req.body);
+    //
+    //user.save(function(err, user){
+    //    if(err)res.status(500).send('an error ocurred');
+    //    res.status(200).send(user);
+    //});
 }
 
 
