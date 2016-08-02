@@ -1,6 +1,4 @@
-
-module.exports = function(app){
-    app.get('/public', function(req, res, next) {
-      res.render('');
-    })
-}
+/**
+ * Created by vinidev on 2/08/16.
+ * Created for public APIs
+ */

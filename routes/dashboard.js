@@ -4,8 +4,9 @@
 
 module.exports = function(app){
     var indexController = require('../controllers/index');
+    var sessionLive     = require('../middlewares/livesession');
 
     /* GET dashboard page. */
-    app.get('/dashboard', indexController.dashboard);
+    app.get('/dashboard', sessionLive ,indexController.dashboard);
 
 }

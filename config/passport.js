@@ -71,9 +71,12 @@ module.exports = function(passport) {
 
                 // save the user
                 newUser.save(function(err) {
-                    if (err)
+                    if (err){
                         throw err;
-                    return done(null, newUser);
+                    }else{
+                        req.session.user = newUser;
+                        return done(null, newUser);
+                    }
                 });
             }
 
@@ -107,6 +110,7 @@ module.exports = function(passport) {
                     return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
                 // all is well, return successful user
+                req.session.user = user;
                 return done(null, user);
             });
 

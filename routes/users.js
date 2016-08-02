@@ -2,11 +2,12 @@
 
 module.exports = function(app, passport){
     var userController  = require('../controllers/user');
+    var livesession     = require('../middlewares/livesession');
     /* GET users listing. */
-    app.get('/users', userController.users);
+    app.get('/users', livesession, userController.users);
 
     /* GET users permissions listing. */
-    app.get('/users/permissions', userController.permissions);
+    app.get('/users/permissions', livesession, userController.permissions);
 
 
     /* POST users login to verification. */
