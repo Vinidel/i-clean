@@ -1,8 +1,11 @@
 
 module.exports = function(app){
-    var indexController = app.controllers.index;
+    var indexController = require('../controllers/index');
     /* GET home page. */
     app.get('/', indexController.index);
-    ///* GET login. */
-    //app.get('/login', indexController.login);
+
+    /* GET Errors. */
+    app.get('/error', indexController.error);
+
+
 }

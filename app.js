@@ -49,6 +49,8 @@ app.use(flash());                                               // use connect-f
 
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/users')(app,passport);
+require('./routes/dashboard')(app);
+require('./routes/index')(app);
 
 //Connecting to mongoDB
 mongoose.connect(mongoConf.mongo.uri);

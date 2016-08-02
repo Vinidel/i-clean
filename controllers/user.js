@@ -11,8 +11,7 @@ const UserController = {
     users       : list,
     login       : login,
     permissions : permissions,
-    register    : register,
-    error       : error
+    register    : register
 };
 
 function list(req, res, next) {
@@ -59,7 +58,5 @@ function register(req, res, next){
 }
 
 
-function error(req, res, next){
-    res.send('Email has been already taken.');
-}
+
 module.exports =  UserController;
