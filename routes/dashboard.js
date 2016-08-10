@@ -1,13 +1,12 @@
+/**
+ * Created by vinidev on 2/08/16.
+ */
 
 module.exports = function(app){
     var indexController = require('../controllers/index');
     var sessionLive     = require('../middlewares/livesession');
 
-    /* GET home page. */
-    app.get('/', indexController.index);
-
-    /* GET Errors. */
-    app.get('/error', sessionLive, indexController.error);
-
+    /* GET dashboard page. */
+    app.get('/dashboard', sessionLive ,indexController.dashboard);
 
 }

@@ -1,15 +1,25 @@
-module.exports = function(app){
-    var LoginController = {
-        index : function(req, res){
-            res.render('index');
-        },
 
-        login : function(req, res){
-            console.log(req.query.user);
-            console.log(req.query.pass);
-            res.render('main/index');
-        }
-    };
 
-    return LoginController;
+
+
+var LoginController = {
+    index       : index,
+    dashboard   : dashboard,
+    error       : error
+};
+
+function index(req, res, next){
+    res.render('index');
 }
+
+function dashboard(req, res, next){
+    console.log(req.flash);
+    res.render('main/index');
+}
+
+function error(req, res, next){
+
+    res.status(400).send(req.flash());
+}
+
+module.exports =  LoginController;
