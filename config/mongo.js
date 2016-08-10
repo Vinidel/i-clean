@@ -9,7 +9,7 @@ module.exports = {
 
     // MongoDB connection options
     mongo: {
-        uri: 'mongodb://localhost/schedyou-dev'
+        uri: 'mongodb://127.0.0.1:27017/schedyou-dev'
     },
 
     // Seed database on startup

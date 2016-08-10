@@ -11,7 +11,8 @@ const UserController = {
     users       : list,
     login       : login,
     permissions : permissions,
-    register    : register
+    register    : register,
+    signout     : signout
 };
 
 function list(req, res, next) {
@@ -56,6 +57,12 @@ function register(req, res, next){
     //    res.status(200).send(user);
     //});
 }
+
+function signout(req, res, next){
+    req.session.destroy();
+    res.redirect('/');
+}
+
 
 
 

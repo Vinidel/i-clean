@@ -36,8 +36,8 @@
         <div class="loginmodal-container">
             <h1>Login to Your Account</h1><br>
             <form method="post" action="/login">
-                <input type="text" name="user" placeholder="Username">
-                <input type="password" name="pass" placeholder="Password">
+                <input type="text" name="email" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
                 <input type="submit" name="login" class="login loginmodal-submit" value="Submit">
             </form>
 
@@ -53,15 +53,15 @@
     <div class="modal-dialog">
         <div class="registermodal-container">
             <h1 class="center">Register</h1><br>
-            <form name="register-form" id="register-form" method="post" action="/register">
+            <form name="register-form" id="register-form" method="post" action="/signup">
 
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" name="userName" class="form-control schedinput" required>
+                    <input type="text" name="username" class="form-control schedinput" required>
                 </div>
                 <div class="form-group">
                     <label>Real name</label>
-                    <input type="text" name="realName" form-control schedinput" required>
+                    <input type="text" name="name" form-control schedinput" required>
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>

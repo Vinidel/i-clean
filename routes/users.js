@@ -25,4 +25,6 @@ module.exports = function(app, passport){
         failureFlash : true // allow flash messages
     }));
 
+    /* GET to logout from current session. */
+    app.get('/signout', livesession, userController.signout);
 };
