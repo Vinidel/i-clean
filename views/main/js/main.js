@@ -18,7 +18,7 @@
                 url: '/',
                 views: {
                     'nav': {
-                        template: '<div>Olaaaaaaaaaaaaaaaaaa</div>', controller: 'DashboardController', controllerAs: 'dashCtrl'
+                        templateUrl: '/main/partials/dashnav.html', controller: 'DashboardController', controllerAs: 'dashCtrl'
                     }
                 }
             })

@@ -15,7 +15,7 @@ function index(req, res, next){
 function dashboard(req, res, next){
     console.log(req.flash);
     var user = req.session.user;
-    res.render('main/index', user);
+    res.render('main/index');
 }
 
 function error(req, res, next){
