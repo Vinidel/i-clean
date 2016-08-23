@@ -3,8 +3,10 @@
 module.exports = function(app, passport){
     var userController  = require('../controllers/user');
     var livesession     = require('../middlewares/livesession');
-    /* GET users listing. */
+    /* GET users list. */
     app.get('/users', livesession, userController.users);
+
+    /* GET listing one User. */
     app.get('/users/:id', livesession, userController.find);
 
     /* GET users permissions listing. */
