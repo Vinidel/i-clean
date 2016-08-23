@@ -5,6 +5,7 @@ module.exports = function(app, passport){
     var livesession     = require('../middlewares/livesession');
     /* GET users listing. */
     app.get('/users', livesession, userController.users);
+    app.get('/users/:id', livesession, userController.find);
 
     /* GET users permissions listing. */
     app.get('/users/permissions', livesession, userController.permissions);
