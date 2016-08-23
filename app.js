@@ -55,6 +55,7 @@ require('./routes/dashboard')(app);
 require('./routes/index')(app);
 
 //Connecting to mongoDB
+mongoose.Promise = global.Promise;
 mongoose.connect(mongoConf.mongo.uri);
 mongoose.connection.on('error', function(err) {
     console.error('MongoDB connection error: ' + err);

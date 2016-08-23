@@ -25,8 +25,11 @@
     }
 
     function DashboardController(){
-        var self    = this;
-        self.test   = test;
+        var self            = this;
+        self.test           = test;
+        self.currentuser    = {
+            name : 'Vini'
+        };
 
         test();
 
