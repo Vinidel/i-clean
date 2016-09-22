@@ -12,7 +12,8 @@ const UserController = {
     login       : login,
     permissions : permissions,
     register    : register,
-    signout     : signout
+    signout     : signout,
+    find        : find
 };
 
 function list(req, res, next) {
@@ -61,6 +62,17 @@ function register(req, res, next){
 function signout(req, res, next){
     req.session.destroy();
     res.redirect('/');
+}
+
+function find(req, res, next){
+    console.log(req.params);
+    User.findById( req.params.id, function(error, user) {
+            if(user == null){
+                res.status(400).send(error.message);
+            }else{
+                res.status(200).send(user);
+            }
+    });
 }
 
 
