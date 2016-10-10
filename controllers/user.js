@@ -7,7 +7,6 @@ const mongoose    = require('mongoose');
 const User        = require('../models/user/user');
 const Login       = require('../models/login/login');
 
-
 const list = (req, res, next) => {
     User.
         find({}).
@@ -37,6 +36,18 @@ const register = (req, res, next) => {
 const signout = (req, res, next) => {
     req.session.destroy();
     res.redirect('/');
+}
+
+
+const find = (req, res, next) => {
+    console.log(req.params);
+    User.findById( req.params.id, function(error, user) {
+            if(user == null){
+                res.status(400).send(error.message);
+            }else{
+                res.status(200).send(user);
+            }
+    });
 }
 
 const UserController = {

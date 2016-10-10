@@ -4,6 +4,7 @@ const index = (req, res, next) => {
 
 const dashboard = (req, res, next) => {
     console.log(req.flash);
+    var user = req.session.user;
     res.render('main/index');
 }
 

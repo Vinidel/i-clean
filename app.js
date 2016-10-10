@@ -24,6 +24,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
+
 
 
 // required for passport
@@ -38,6 +40,7 @@ require('./routes/dashboard')(app);
 require('./routes/index')(app);
 
 //Connecting to mongoDB
+mongoose.Promise = global.Promise;
 mongoose.connect(mongoConf.mongo.uri);
 mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error: ' + err);

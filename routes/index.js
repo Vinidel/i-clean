@@ -7,7 +7,7 @@ module.exports = function(app){
     app.get('/', indexController.index);
 
     /* GET Errors. */
-    app.get('/error', sessionLive, indexController.error);
+    app.get('/error', indexController.error);
 
 
 }
