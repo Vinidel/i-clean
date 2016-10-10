@@ -1,7 +1,7 @@
 
 module.exports = function(app){
-    var indexController = require('../controllers/index');
-    var sessionLive     = require('../middlewares/livesession');
+    const indexController = require('../controllers/index');
+    const sessionLive     = require('../middlewares/livesession');
 
     /* GET home page. */
     app.get('/', indexController.index);
