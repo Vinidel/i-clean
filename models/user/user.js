@@ -1,14 +1,13 @@
-/**
+    /**
  * Created by vinidev on 17/07/16.
  */
 'use strict';
 
-var mongoose    = require('mongoose');
-var Schema      = mongoose.Schema;
-var bcrypt      = require('bcrypt-nodejs');
+const mongoose    = require('mongoose');
+const bcrypt      = require('bcrypt-nodejs');
 
 
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name        : String,
     username    : String,
     active      : Boolean,
@@ -18,12 +17,12 @@ var userSchema = new mongoose.Schema({
 
 // methods ======================
 // generating a hash
-userSchema.methods.generateHash = function(password) {
+userSchema.methods.generateHash = (password) => {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 // checking if password is valid
-userSchema.methods.validPassword = function(password) {
+userSchema.methods.validPassword = (password) => {
     return bcrypt.compareSync(password, this.password);
 };
 
