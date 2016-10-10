@@ -1,7 +1,7 @@
 /**
  * Created by vinidev on 3/08/16.
  */
-module.exports = function(req, res, next){
+module.exports = (req, res, next) => {
     if(!req.session.user){
         return res.redirect('/');
     }

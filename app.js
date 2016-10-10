@@ -1,28 +1,20 @@
-var express         = require('express');
-var path            = require('path');
-var favicon         = require('serve-favicon');
-var logger          = require('morgan');
-var cookieParser    = require('cookie-parser');
-var bodyParser      = require('body-parser');
-var consign         = require('consign');
-var load            = require('express-load');
-var mongoose        = require('mongoose');
-var mongoConf       = require('./config/mongo');
-var passport        = require('passport');
-var flash           = require('connect-flash');
-var session         = require('express-session');
-
-var app             = express();
-
-//var routes          = require('./routes/index');
-//var users           = require('./routes/users');
-
-
+const express         = require('express');
+const path            = require('path');
+const favicon         = require('serve-favicon');
+const logger          = require('morgan');
+const cookieParser    = require('cookie-parser');
+const bodyParser      = require('body-parser');
+const load            = require('express-load');
+const mongoose        = require('mongoose');
+const mongoConf       = require('./config/mongo');
+const passport        = require('passport');
+const flash           = require('connect-flash');
+const session         = require('express-session');
+const app             = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 
 
 // uncomment after placing your favicon in /public
@@ -33,13 +25,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
-
-
-//
-//consign()
-//    .include('models')
-//    .then('controllers')
-//    .into(app);
 
 
 
@@ -57,17 +42,16 @@ require('./routes/index')(app);
 //Connecting to mongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoConf.mongo.uri);
-mongoose.connection.on('error', function(err) {
+mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error: ' + err);
     process.exit(-1);
 });
 
 
 
-
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -77,7 +61,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use((err, req, res, next) => {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -89,7 +73,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

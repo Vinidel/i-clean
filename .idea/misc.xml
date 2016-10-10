@@ -22,6 +22,9 @@
   </component>
   <component name="CopyrightManager" default="" />
   <component name="IdProvider" IDEtalkID="08AD3BFCA654542D09F1068FFCEBEEBD" />
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />

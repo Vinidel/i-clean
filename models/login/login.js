@@ -3,10 +3,10 @@
  */
 'use strict';
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 
-var loginSchema = new mongoose.Schema({
+const loginSchema = new mongoose.Schema({
     email   : String,
     pass    : String
     //active  : Boolean

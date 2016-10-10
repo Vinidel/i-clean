@@ -1,26 +1,22 @@
-
-
-
-
-var LoginController = {
-    index       : index,
-    dashboard   : dashboard,
-    error       : error
-};
-
-function index(req, res, next){
+const index = (req, res, next) => {
     res.render('index');
 }
 
-function dashboard(req, res, next){
+const dashboard = (req, res, next) => {
     console.log(req.flash);
     var user = req.session.user;
     res.render('main/index');
 }
 
-function error(req, res, next){
-
+const error = (req, res, next) => {
     res.status(400).send(req.flash());
+
 }
+
+const LoginController = {
+    index       : index,
+    dashboard   : dashboard,
+    error       : error
+};
 
 module.exports =  LoginController;
